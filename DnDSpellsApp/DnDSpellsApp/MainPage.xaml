@@ -10,20 +10,60 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="161*"/>
-            <RowDefinition Height="839*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="364*"/>
-            <ColumnDefinition Width="1137*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Grid.Row="0">
+        <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2">
             <TextBox x:Name="SearchBox" Height="30" PlaceholderText="Search"></TextBox>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
                 <CheckBox x:Name="AllSpellsCheckBox">All Spells</CheckBox>
                 <CheckBox x:Name="MySpellsCheckBox">My Spells</CheckBox>
             </StackPanel>
+            <Button x:Name="AdvancedFilteringButton" HorizontalAlignment="Center" Margin="10">Advanced Filtering</Button>
+        </StackPanel>
+        
+        <ListView Grid.Column="0" Grid.Row="1" 
+                  x:Name="SpellsListView" Background="AliceBlue">
+        </ListView>
+        
+        <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+            <TextBox x:Name="SpellNameTextBox" 
+                     FontSize="30" 
+                     BorderBrush="Transparent"
+                     PlaceholderText="Dummy Spell Name" 
+                     HorizontalAlignment="Center" >
+            </TextBox>
+            
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <TextBox x:Name="SpellLevelLabel" Text="Spell Level:" BorderBrush="Transparent" FontSize="18"></TextBox>
+                <TextBox x:Name="SpellLevelTextBox" BorderBrush="Transparent" FontSize="18" PlaceholderText="1"></TextBox>
+            </StackPanel>
+            
+            <TextBox x:Name="SpellDescriptionTextBox"
+                     BorderBrush="Transparent"
+                     PlaceholderText="AKjwe lajw elkawj jaehlka wjealkjd alkwje lakjf lsjehra wkjekaj smd aerhawl keja lkdm awkd"
+                     HorizontalAlignment="Center"
+                     Margin="30 10 30 10">
+            </TextBox>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="30 10">
+                    <TextBox x:Name="SpellDurationLabel" Text="Spell Duration:" BorderBrush="Transparent"></TextBox>
+                    <TextBox x:Name="SpellDurationTextBox" BorderBrush="Transparent" PlaceholderText="Instantaneous"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="30 10">
+                    <TextBox x:Name="SpellRangeLabel" Text="Spell Range:" BorderBrush="Transparent"></TextBox>
+                    <TextBox x:Name="SpellRangeTextBox" BorderBrush="Transparent" PlaceholderText="30ft"></TextBox>
+                </StackPanel>
+            </StackPanel>
+
+            <WebView x:Name="WebView" Height="600" Width="900" Margin="0 10"  Source="https://www.dndbeyond.com/spells/acid-arrow"></WebView>
+            
         </StackPanel>
     </Grid>
 </Page>
