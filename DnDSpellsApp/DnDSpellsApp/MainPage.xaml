@@ -7,7 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    
+    <Page.TopAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="DetailsButton" Icon="Document" Label="Details" ToolTipService.ToolTip="View app details"></AppBarButton>
+            <AppBarButton x:Name="TeamMembersButton" Icon="Contact" Label="Team Members" ToolTipService.ToolTip="View all team members"></AppBarButton>
+        </CommandBar>
+    </Page.TopAppBar>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -35,20 +42,21 @@
             <TextBox x:Name="SpellNameTextBox" 
                      FontSize="30" 
                      BorderBrush="Transparent"
-                     PlaceholderText="Dummy Spell Name" 
+                     PlaceholderText="Acid Arrow" 
                      HorizontalAlignment="Center" >
             </TextBox>
             
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
                 <TextBox x:Name="SpellLevelLabel" Text="Spell Level:" BorderBrush="Transparent" FontSize="18"></TextBox>
-                <TextBox x:Name="SpellLevelTextBox" BorderBrush="Transparent" FontSize="18" PlaceholderText="1"></TextBox>
+                <TextBox x:Name="SpellLevelTextBox" BorderBrush="Transparent" FontSize="18" PlaceholderText="2"></TextBox>
             </StackPanel>
             
             <TextBox x:Name="SpellDescriptionTextBox"
                      BorderBrush="Transparent"
-                     PlaceholderText="AKjwe lajw elkawj jaehlka wjealkjd alkwje lakjf lsjehra wkjekaj smd aerhawl keja lkdm awkd"
+                     PlaceholderText="A shimmering green arrow streaks toward a target within range and bursts in a spray of acid. Make a ranged spell attack against the target. On a hit, the target takes 4d4 acid damage immediately and 2d4 acid damage at the end of its next turn. On a miss, the arrow splashes the target with acid for half as much of the initial damage and no damage at the end of its next turn."
+                     TextWrapping="Wrap"
                      HorizontalAlignment="Center"
-                     Margin="30 10 30 10">
+                     Margin="50 10 50 10">
             </TextBox>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
