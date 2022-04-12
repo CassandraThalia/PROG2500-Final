@@ -35,7 +35,7 @@ namespace DnDSpellsApp
             var spell = await SpellProcessor.LoadSpell(spellName);
 
             //var uriSource = new Uri(spell.Url, UriKind.Absolute);
-            //WebView.Source = uriSource;
+            var uriSource = new Uri("https://www.dndbeyond.com/spells/" + spell.Index, UriKind.Absolute);
 
             SpellNameTextBox.Text = spell.Name;
             SpellLevelTextBox.Text = spell.Level;
@@ -49,6 +49,8 @@ namespace DnDSpellsApp
 
             SpellDurationTextBox.Text = spell.Duration;
             SpellRangeTextBox.Text = spell.Range;
+
+            WebView.Source = uriSource;
         }
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
