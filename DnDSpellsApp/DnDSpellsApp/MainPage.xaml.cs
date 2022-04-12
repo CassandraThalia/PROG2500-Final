@@ -1,8 +1,10 @@
-﻿using System;
+﻿using DnDSpellsApp.Repositories;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -25,6 +27,33 @@ namespace DnDSpellsApp
         public MainPage()
         {
             this.InitializeComponent();
+            ApiHelper.InitializeClient();
+        }
+
+        private async Task LoadData(string spellName = "alarm")
+        {
+            var spell = await SpellProcessor.LoadSpell(spellName);
+
+            //var uriSource = new Uri(spell.Url, UriKind.Absolute);
+            //WebView.Source = uriSource;
+
+            SpellNameTextBox.Text = spell.Name;
+            SpellLevelTextBox.Text = spell.Level;
+
+            for(int i = 0; i < spell.Desc.Length; i++)
+            {
+                SpellDescriptionTextBox.Text += spell.Desc[i] + " ";
+            }
+            //SpellDescriptionTextBox.Text = spell.Desc[0];
+
+
+            SpellDurationTextBox.Text = spell.Duration;
+            SpellRangeTextBox.Text = spell.Range;
+        }
+
+        private async void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            await LoadData();
         }
     }
 }
