@@ -30,7 +30,7 @@ namespace DnDSpellsApp
             ApiHelper.InitializeClient();
         }
 
-        private async Task LoadData(string spellName = "alarm")
+        private async Task LoadData(string spellName = "aid")
         {
             var spell = await SpellProcessor.LoadSpell(spellName);
 
@@ -56,6 +56,16 @@ namespace DnDSpellsApp
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
             await LoadData();
+        }
+
+        private void DetailsButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AboutAppPage));
+        }
+
+        private void TeamMembersButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AboutTeamPage));
         }
     }
 }

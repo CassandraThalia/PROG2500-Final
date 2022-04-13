@@ -10,8 +10,8 @@
     
     <Page.TopAppBar>
         <CommandBar>
-            <AppBarButton x:Name="DetailsButton" Icon="Document" Label="Details" ToolTipService.ToolTip="View app details"></AppBarButton>
-            <AppBarButton x:Name="TeamMembersButton" Icon="Contact" Label="Team Members" ToolTipService.ToolTip="View all team members"></AppBarButton>
+            <AppBarButton x:Name="DetailsButton" Icon="Document" Label="Details" ToolTipService.ToolTip="View app details" Click="DetailsButton_Click"></AppBarButton>
+            <AppBarButton x:Name="TeamMembersButton" Icon="Contact" Label="Team Members" ToolTipService.ToolTip="View all team members" Click="TeamMembersButton_Click"></AppBarButton>
         </CommandBar>
     </Page.TopAppBar>
     
@@ -39,34 +39,30 @@
         </ListView>
         
         <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
-            <TextBox x:Name="SpellNameTextBox" 
-                     FontSize="30" 
-                     BorderBrush="Transparent"
-                     PlaceholderText="Acid Arrow" 
-                     HorizontalAlignment="Center" >
-            </TextBox>
+            <TextBlock x:Name="SpellNameTextBox" 
+                     FontSize="30"
+                     HorizontalAlignment="Center"  Width="250">
+            </TextBlock>
             
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-                <TextBox x:Name="SpellLevelLabel" Text="Spell Level:" BorderBrush="Transparent" FontSize="18"></TextBox>
-                <TextBox x:Name="SpellLevelTextBox" BorderBrush="Transparent" FontSize="18" PlaceholderText="2"></TextBox>
+                <TextBlock x:Name="SpellLevelLabel" Text="Spell Level:" FontSize="18"></TextBlock>
+                <TextBlock x:Name="SpellLevelTextBox" FontSize="18"  Width="100"></TextBlock>
             </StackPanel>
             
-            <TextBox x:Name="SpellDescriptionTextBox"
-                     BorderBrush="Transparent"
-                     PlaceholderText="A shimmering green arrow streaks toward a target within range and bursts in a spray of acid. Make a ranged spell attack against the target. On a hit, the target takes 4d4 acid damage immediately and 2d4 acid damage at the end of its next turn. On a miss, the arrow splashes the target with acid for half as much of the initial damage and no damage at the end of its next turn."
-                     TextWrapping="Wrap"
-                     HorizontalAlignment="Center"
-                     Margin="50 10 50 10">
-            </TextBox>
+            <TextBlock x:Name="SpellDescriptionTextBox"
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Center"
+                       Margin="50 10 50 10">
+            </TextBlock>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="30 10">
-                    <TextBox x:Name="SpellDurationLabel" Text="Spell Duration:" BorderBrush="Transparent"></TextBox>
-                    <TextBox x:Name="SpellDurationTextBox" BorderBrush="Transparent" PlaceholderText="Instantaneous"></TextBox>
+                    <TextBlock x:Name="SpellDurationLabel" Text="Spell Duration:"></TextBlock>
+                    <TextBlock x:Name="SpellDurationTextBox" Width="100"></TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="30 10">
-                    <TextBox x:Name="SpellRangeLabel" Text="Spell Range:" BorderBrush="Transparent"></TextBox>
-                    <TextBox x:Name="SpellRangeTextBox" BorderBrush="Transparent" PlaceholderText="30ft"></TextBox>
+                    <TextBlock x:Name="SpellRangeLabel" Text="Spell Range:"></TextBlock>
+                    <TextBlock x:Name="SpellRangeTextBox" Width="100"></TextBlock>
                 </StackPanel>
             </StackPanel>
 
