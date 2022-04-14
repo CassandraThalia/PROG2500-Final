@@ -1,4 +1,5 @@
 ﻿using DnDSpellsApp.Repositories;
+using DnDSpellsApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,10 +25,13 @@ namespace DnDSpellsApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public SpellViewModel spellViewModel { get; set; }
+
         public MainPage()
         {
             this.InitializeComponent();
             ApiHelper.InitializeClient();
+            this.spellViewModel = new SpellViewModel();
         }
 
         private async Task LoadData(string spellName = "aid")
