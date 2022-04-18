@@ -25,13 +25,13 @@ namespace DnDSpellsApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public SpellViewModel spellViewModel { get; set; }
+        public SpellViewModel SpellViewModel { get; set; }
 
         public MainPage()
         {
             this.InitializeComponent();
             ApiHelper.InitializeClient();
-            this.spellViewModel = new SpellViewModel();
+            this.SpellViewModel = new SpellViewModel();
         }
 
         private async Task LoadData(string spellName = "aid")

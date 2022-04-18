@@ -16,5 +16,13 @@ namespace DnDSpellsApp.Models
         public string Duration { get; set; }
         public string Range { get; set; }
         public string Url { get; set; }
+
+        public SpellModel(string n, string d, string r, string url)
+        {
+            this.Name = n;
+            this.Duration = d;
+            this.Range = r;
+            this.Url = url;
+        }
     }
 }
