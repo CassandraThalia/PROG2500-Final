@@ -14,7 +14,7 @@
                               Source="{x:Bind SpellViewModel.SpellModels, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></CollectionViewSource>
         <DataTemplate x:Name="SpellTemplate" x:DataType="models:SpellModel">
             <StackPanel Orientation="Horizontal" Margin="6">
-                <TextBlock Text="{x:Bind Name}"/>
+                <TextBlock Text="{x:Bind Name}" Foreground="Purple"/>
             </StackPanel>
         </DataTemplate>
     </Page.Resources>
@@ -46,13 +46,13 @@
             <Button x:Name="AdvancedFilteringButton" HorizontalAlignment="Center" Margin="10">Advanced Filtering</Button>
         </StackPanel>
 
-        <StackPanel Grid.Column="0" Grid.Row="1">
+        <ScrollViewer Grid.Column="0" Grid.Row="1">
             <ListView x:Name="SpellsListView" Background="AliceBlue"
                       ItemsSource="{Binding Source={StaticResource SpellCollection}}"
                       ItemTemplate="{StaticResource SpellTemplate}"
                       SelectedItem="{x:Bind SpellViewModel.SelectedSpell, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             </ListView>
-        </StackPanel>
+        </ScrollViewer>
         
         
         <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">

@@ -105,7 +105,7 @@ namespace DnDSpellsApp.ViewModels
 
         public void CreateListOfSpells()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 20; i++)
             //for (int i = 0; i < SpellModels.Count; i++)
             {
                 this.AddSpell("test", "4 hours", "30 ft", "url");

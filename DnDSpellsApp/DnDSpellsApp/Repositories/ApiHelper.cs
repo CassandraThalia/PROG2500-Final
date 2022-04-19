@@ -15,8 +15,8 @@ namespace DnDSpellsApp.Repositories
         public static void InitializeClient()
         {
             ApiClient = new HttpClient();
-            //ApiClient.BaseAddress = new Uri("https://www.dnd5eapi.co/api/spells");
-            ApiClient.BaseAddress = new Uri("https://www.dnd5eapi.co/");
+            ApiClient.BaseAddress = new Uri("https://www.dnd5eapi.co/api/spells");
+            //ApiClient.BaseAddress = new Uri("https://www.dnd5eapi.co/");
             ApiClient.DefaultRequestHeaders.Accept.Clear();
 
             //Adds a header saying to give me json so we can parse into application
