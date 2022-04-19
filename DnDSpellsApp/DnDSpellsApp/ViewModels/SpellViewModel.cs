@@ -110,6 +110,7 @@ namespace DnDSpellsApp.ViewModels
             {
                 this.AddSpell("test", "4 hours", "30 ft", "url");
                 this.AddSpell("no thank you", "4 hours", "30 ft", "url");
+
                 //SpellModels.Add(new SpellModel("test", "4 hours", "30 ft", "url"));
                 //_allSpells.Add(new SpellModel("test", "4 hours", "30 ft", "url"));
             }
