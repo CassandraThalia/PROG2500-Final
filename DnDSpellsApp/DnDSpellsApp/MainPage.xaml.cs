@@ -36,7 +36,7 @@ namespace DnDSpellsApp
 
         private async Task LoadData(string spellName = "aid")
         {
-            var spell = await SpellProcessor.LoadSpell(spellName);
+            var spell = await SpellProcessor.LoadSpell(SpellViewModel);
 
             //var uriSource = new Uri(spell.Url, UriKind.Absolute);
             var uriSource = new Uri("https://www.dndbeyond.com/spells/" + spell.Index, UriKind.Absolute);

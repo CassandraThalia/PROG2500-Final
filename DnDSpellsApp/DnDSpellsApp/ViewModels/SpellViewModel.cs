@@ -105,15 +105,16 @@ namespace DnDSpellsApp.ViewModels
 
         public void CreateListOfSpells()
         {
-            for (int i = 0; i < 20; i++)
-            //for (int i = 0; i < SpellModels.Count; i++)
-            {
-                this.AddSpell("test", "4 hours", "30 ft", "url");
-                this.AddSpell("no thank you", "4 hours", "30 ft", "url");
+            return;
+            //for (int i = 0; i < 20; i++)
+            ////for (int i = 0; i < SpellModels.Count; i++)
+            //{
+            //    this.AddSpell("test", "4 hours", "30 ft", "url");
+            //    this.AddSpell("no thank you", "4 hours", "30 ft", "url");
 
-                //SpellModels.Add(new SpellModel("test", "4 hours", "30 ft", "url"));
-                //_allSpells.Add(new SpellModel("test", "4 hours", "30 ft", "url"));
-            }
+            //    //SpellModels.Add(new SpellModel("test", "4 hours", "30 ft", "url"));
+            //    //_allSpells.Add(new SpellModel("test", "4 hours", "30 ft", "url"));
+            //}
             //_allSpells.Add(await Repositories.SpellProcessor.LoadSpell("acid-arrow"));
             //_allSpells.Clear();
             //SpellModels.Clear();

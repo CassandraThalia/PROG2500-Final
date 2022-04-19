@@ -14,10 +14,9 @@ namespace DnDSpellsApp.Repositories
     public class SpellProcessor
     {
         //Web call to API
-        public static async Task<SpellModel> LoadSpell(string index = "acid-arrow")
+        public static async Task<SpellModel> LoadSpell(SpellViewModel spv)
         {
             string spellsUrl = "https://www.dnd5eapi.co/api/spells";
-            SpellViewModel spellViewModel = new SpellViewModel();
 
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(spellsUrl))
             {
@@ -47,7 +46,7 @@ namespace DnDSpellsApp.Repositories
 
                                 //Store name in an array to access when calling other API
                                 arr[i] = item.name.ToString();
-                                spellViewModel.AddSpell(item.name.ToString(), "", "", "");
+                                spv.AddSpell(item.name.ToString(), "", "", "");
 
                                 i++;
                             }
@@ -69,14 +68,14 @@ namespace DnDSpellsApp.Repositories
             string url = "";
             
 
-            if (index != "acid-arrow")
-            {
-                url = $"https://www.dnd5eapi.co/api/spells/{ index}";
-            }
-            else
-            {
-                url = "https://www.dnd5eapi.co/api/spells/acid-arrow";
-            }
+            //if (index != "acid-arrow")
+            //{
+            //    url = $"https://www.dnd5eapi.co/api/spells/{ index}";
+            //}
+            //else
+            //{
+              url = "https://www.dnd5eapi.co/api/spells/acid-arrow";
+            //}
 
             //Open up new call to web-browser/client, wait for response from call
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
